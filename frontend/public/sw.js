@@ -43,13 +43,26 @@ self.addEventListener('fetch', event => {
 
     // For navigation and static assets: network first, fallback to cache
     event.respondWith(
-        fetch(request)
-            .then(response => {
-                // Clone and cache successful responses
-                if (response.ok) {
-                    const responseClone = response.clone();
-                    caches.open(CACHE_NAME).then(cache => cache.put(request, responseClone));
+        fetch(event.request)
+            .then((response) => {
+                // Check if we received a valid response
+                if (!response || response.status !== 200 || response.type !== 'basic') {
+                    return response;
                 }
+
+                // IMPORTANT: Do not cache chrome-extension:// or other non-http schemes
+                if (!event.request.url.startsWith('http')) {
+                    return response;
+                }
+
+                // Clone the response
+                var responseToCache = response.clone();
+
+                caches.open(CACHE_NAME)
+                    .then((cache) => {
+                        cache.put(event.request, responseToCache);
+                    });
+
                 return response;
             })
             .catch(() => caches.match(request))
