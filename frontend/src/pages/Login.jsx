@@ -38,7 +38,8 @@ const Login = ({ onLogin }) => {
 
                 {/* Login Card */}
                 <div className="bg-white rounded-2xl shadow-2xl p-8">
-                    <h2 className="text-xl font-bold text-gray-800 mb-6 text-center">Iniciar Sesión</h2>
+                    <h2 className="text-xl font-bold text-gray-800 mb-2 text-center">Iniciar Sesión</h2>
+                    <p className="text-center text-gray-500 mb-6 text-sm">v2.0 Cloud ☁️</p>
 
                     {error && (
                         <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4 flex items-center gap-2 text-sm">
