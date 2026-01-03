@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Map, Edit2, Trash2, Plus, UserPlus, Play, CheckCircle, Clock, Calendar, Sun, Moon, Sunset } from 'lucide-react';
 
-const API_HOST = `http://${window.location.hostname}:3000`;
+import API_HOST from '../config/api';
 
 const RoutesPage = () => {
     const [routes, setRoutes] = useState([]);

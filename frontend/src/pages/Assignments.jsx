@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { User, Truck, ArrowRight, Calendar, Trash2, Plus, Bike, Car } from 'lucide-react';
 
-const API_HOST = `http://${window.location.hostname}:3000`;
+import API_HOST from '../config/api';
 
 const Assignments = () => {
     const [assignments, setAssignments] = useState([]);

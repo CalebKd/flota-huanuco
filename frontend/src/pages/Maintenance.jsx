@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Wrench, AlertTriangle, CheckCircle, Clock, Calendar, Truck, Activity, Edit2, CheckSquare, Info, DollarSign } from 'lucide-react';
 
-const API_HOST = `http://${window.location.hostname}:3000`;
+import API_HOST from '../config/api';
 
 const Maintenance = () => {
     const [healthData, setHealthData] = useState([]);

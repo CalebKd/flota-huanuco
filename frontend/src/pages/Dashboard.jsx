@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { DollarSign, PieChart, TrendingUp, Truck, AlertCircle, RefreshCw } from 'lucide-react';
 
 // Dynamic API host - works on localhost and network
-const API_HOST = `http://${window.location.hostname}:3000`;
+import API_HOST from '../config/api';
 
 const Dashboard = () => {
     const [stats, setStats] = useState({

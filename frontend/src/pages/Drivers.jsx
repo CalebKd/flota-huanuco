@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { User, Phone, CreditCard, Edit2, Trash2, Plus } from 'lucide-react';
 
-const API_HOST = `http://${window.location.hostname}:3000`;
+import API_HOST from '../config/api';
 
 const Drivers = () => {
     const [drivers, setDrivers] = useState([]);
