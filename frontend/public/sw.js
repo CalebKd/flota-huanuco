@@ -1,4 +1,4 @@
-const CACHE_NAME = 'flota-muni-v1';
+const CACHE_NAME = 'flota-muni-v2';
 const urlsToCache = [
     '/',
     '/index.html'
