@@ -6,4 +6,6 @@ const API_HOST = window.location.hostname === 'localhost' || window.location.hos
     ? (window.location.hostname === 'localhost' ? 'http://localhost:3000' : `http://${window.location.hostname}:3000`)
     : 'https://flota-huanuco-api.onrender.com';
 
+console.log("🚀 Flota App Config Loaded. API Host:", API_HOST);
+
 export default API_HOST;
