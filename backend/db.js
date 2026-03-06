@@ -4,6 +4,13 @@ const dns = require('dns');
 const { promisify } = require('util');
 const url = require('url');
 
+pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
 const resolveIPv4 = promisify(dns.resolve4);
 
 let pool;
